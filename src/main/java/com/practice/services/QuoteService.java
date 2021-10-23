@@ -1,6 +1,7 @@
 package com.practice.services;
 
 import com.practice.models.Quote;
+import com.practice.models.SCCharacter;
 import com.practice.repos.QuoteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
