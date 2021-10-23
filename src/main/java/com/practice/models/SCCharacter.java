@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Getter
@@ -18,10 +20,12 @@ public class SCCharacter {
     @Column
     private Integer id;
 
-    @Column(name = "name")
+    @NotNull(message = "Please add the Schitt's Creek character's name")
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "bio")
+    @NotEmpty(message = "Please add the character's bio")
+    @Column(name = "bio", nullable = false, length = 3000)
     private String bio;
 
     @Column(name = "image")

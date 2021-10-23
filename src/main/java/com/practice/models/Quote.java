@@ -1,6 +1,7 @@
 package com.practice.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,9 +19,11 @@ public class Quote {
     private Integer id;
 
     @Column(name = "character", nullable = false)
+    @NotEmpty(message = "Please provide a name")
     private String schittCharacter;
 
     @Column (name = "quote", nullable = false)
+    @NotEmpty(message = "Please provide a quote")
     private String schittQuote;
 
     // ? Adding the relationship between quotes and characters
