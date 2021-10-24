@@ -44,7 +44,7 @@ public class CharacterService {
         SCCharacter characterToUpdate = optCharacter.get();
         characterToUpdate.setName(character.getName());
         characterToUpdate.setBio(character.getBio());
-        characterToUpdate.setPersonality(character.getPersonality());
+        characterToUpdate.setImage(character.getImage());
         return characterRepo.save(characterToUpdate);
     }
 

@@ -2,6 +2,7 @@ package com.practice;
 
 import com.practice.models.Quote;
 import com.practice.models.SCCharacter;
+import com.practice.repos.CharacterRepo;
 import com.practice.repos.QuoteRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,7 +22,7 @@ public class SchittQuotesApplication {
 
 	@Bean
 //	@Profile()
-	CommandLineRunner commandLineRunner(QuoteRepo quoteRepo) {
+	CommandLineRunner commandLineRunner(QuoteRepo quoteRepo, CharacterRepo characterRepo) {
 		return args -> {
 			Quote newQuote = new Quote();
 			newQuote.setSchittQuote("Oh My God!");

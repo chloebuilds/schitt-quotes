@@ -37,6 +37,6 @@ public class Quote {
             })
     @JoinColumn(name = "character_id", nullable = false)
     @JsonIgnoreProperties("quotes")
-    private SCCharacter character;
+    private Quote quote;
 
 }
