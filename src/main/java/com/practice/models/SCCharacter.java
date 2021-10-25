@@ -33,8 +33,8 @@ public class SCCharacter {
 
 
     // Relationship between character and quotes
-    //@OneToMany(mappedBy = "character", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("character")
+    @OneToMany(mappedBy = "scCharacter", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("scCharacter")
     private List<Quote> quotes;
 
 

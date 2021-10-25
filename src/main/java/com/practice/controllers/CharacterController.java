@@ -2,16 +2,15 @@ package com.practice.controllers;
 
 import com.practice.models.SCCharacter;
 import com.practice.services.CharacterService;
-import org.hibernate.annotations.NotFound;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import javax.xml.stream.events.Characters;
 import java.util.Optional;
 
+@CrossOrigin("*")
 @RestController
 public class CharacterController {
 
@@ -26,8 +25,9 @@ public class CharacterController {
 
     // POST
     @PostMapping("/characters")
-    public SCCharacter postCharacter(@Valid @RequestBody SCCharacter character) {
-        return characterService.createCharacter(character);
+    // @RequestBody allows Spring to automatically deserialize the HTTP request body into a Java object which can be bound to the method and further processed
+    public SCCharacter postCharacter(@Valid @RequestBody SCCharacter scCharacter) {
+        return characterService.createCharacter(scCharacter);
     }
 
     // GET BY ID
@@ -47,8 +47,8 @@ public class CharacterController {
     // EDIT
     @PutMapping("/characters/{characterId}")
     public SCCharacter putCharacter(@PathVariable Integer characterId,
-                                    @RequestBody SCCharacter character) {
-        return characterService.updateCharacter(characterId, character);
+                                    @RequestBody SCCharacter scCharacter) {
+        return characterService.updateCharacter(characterId, scCharacter);
     }
 }
 

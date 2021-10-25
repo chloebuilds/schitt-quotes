@@ -24,24 +24,6 @@ public class SchittQuotesApplication {
 //	@Profile()
 	CommandLineRunner commandLineRunner(QuoteRepo quoteRepo, CharacterRepo characterRepo) {
 		return args -> {
-			Quote newQuote = new Quote();
-			newQuote.setSchittQuote("Oh My God!");
-			newQuote.setSchittCharacter("David Rose");
-
-			Quote newQuote2 = new Quote();
-			newQuote2.setSchittQuote("What you did was impulsive, capricious, and melodramatic. But, it was also wrong.");
-			newQuote2.setSchittCharacter("Moira Rose");
-
-			Quote newQuote3 = new Quote();
-			newQuote3.setSchittQuote("Ew, David!");
-			newQuote3.setSchittCharacter("Alexis Rose");
-
-			Quote newQuote4 = new Quote();
-			newQuote4.setSchittQuote("It's a nightshirt, David.");
-			newQuote4.setSchittCharacter("Johnny Rose");
-
-			quoteRepo.saveAll(List.of(newQuote, newQuote2));
-
 			SCCharacter davidRose = new SCCharacter();
 			davidRose.setName("David Rose");
 			davidRose.setBio("The self-described black sheep of the family, David tries to cope with his unexpected exile with trademark bitterness. But his sarcasm belies a deep knowledge of design and aesthetic, a craftsman’s eye for detail, and an impressive business acumen; all of which he must put to use as he strives to find a place for himself in Schitt’s Creek.");
@@ -63,6 +45,26 @@ public class SchittQuotesApplication {
 			johnnyRose.setImage("johnny-rose.jpg");
 
 			characterRepo.saveAll(List.of(davidRose, moiraRose, alexisRose, johnnyRose));
+
+			Quote newQuote = new Quote();
+			newQuote.setSchittQuote("Oh My God!");
+			newQuote.setSchittCharacter("David Rose");
+
+			Quote newQuote2 = new Quote();
+			newQuote2.setSchittQuote("What you did was impulsive, capricious, and melodramatic. But, it was also wrong.");
+			newQuote2.setSchittCharacter("Moira Rose");
+
+			Quote newQuote3 = new Quote();
+			newQuote3.setSchittQuote("Ew, David!");
+			newQuote3.setSchittCharacter("Alexis Rose");
+
+			Quote newQuote4 = new Quote();
+			newQuote4.setSchittQuote("It's a nightshirt, David.");
+			newQuote4.setSchittCharacter("Johnny Rose");
+
+			quoteRepo.saveAll(List.of(newQuote, newQuote2));
+
+
 		};
 	}
 }
