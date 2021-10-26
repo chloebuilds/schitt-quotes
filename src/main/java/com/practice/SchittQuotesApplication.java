@@ -72,8 +72,8 @@ public class SchittQuotesApplication {
 			newQuote5.setScCharacter(davidRose);
 
 			Quote newQuote6 = new Quote();
-			newQuote5.setSchittQuote("David, stop acting like a disgruntled pelican.");
-			newQuote5.setScCharacter(moiraRose);
+			newQuote6.setSchittQuote("David, stop acting like a disgruntled pelican.");
+			newQuote6.setScCharacter(moiraRose);
 
 			quoteRepo.saveAll(List.of(newQuote, newQuote2, newQuote3, newQuote4, newQuote5, newQuote6));
 
