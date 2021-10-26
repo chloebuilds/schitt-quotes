@@ -72,7 +72,7 @@ public class SchittQuotesApplication {
 			newQuote5.setScCharacter(davidRose);
 
 			Quote newQuote6 = new Quote();
-			newQuote5.setSchittQuote("You might want to rethink the nightgown first — there’s a whole Ebenezer Scrooge thing happening. My best to Bob Cratchet.");
+			newQuote5.setSchittQuote("David, stop acting like a disgruntled pelican.");
 			newQuote5.setScCharacter(moiraRose);
 
 			quoteRepo.saveAll(List.of(newQuote, newQuote2, newQuote3, newQuote4, newQuote5, newQuote6));
