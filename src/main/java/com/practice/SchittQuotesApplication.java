@@ -49,22 +49,18 @@ public class SchittQuotesApplication {
 
 			Quote newQuote = new Quote();
 			newQuote.setSchittQuote("Oh My God!");
-			newQuote.setSchittCharacter("David Rose");
 			newQuote.setScCharacter(davidRose);
 
 			Quote newQuote2 = new Quote();
 			newQuote2.setSchittQuote("What you did was impulsive, capricious, and melodramatic. But, it was also wrong.");
-			newQuote2.setSchittCharacter("Moira Rose");
 			newQuote2.setScCharacter(moiraRose);
 
 			Quote newQuote3 = new Quote();
 			newQuote3.setSchittQuote("You know what, David, you get murdered first for once.");
-			newQuote3.setSchittCharacter("Alexis Rose");
 			newQuote3.setScCharacter(alexisRose);
 
 			Quote newQuote4 = new Quote();
 			newQuote4.setSchittQuote("It's a nightshirt, David.");
-			newQuote4.setSchittCharacter("Johnny Rose");
 			newQuote4.setScCharacter(johnnyRose);
 
 			Quote newQuote5 = new Quote();

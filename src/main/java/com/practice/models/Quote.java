@@ -18,9 +18,6 @@ public class Quote {
     @Column
     private Integer id;
 
-    @Column(name = "character")
-    private String schittCharacter;
-
     @Column (name = "quote", nullable = false)
     @NotEmpty(message = "Please provide a quote")
     @NotNull
