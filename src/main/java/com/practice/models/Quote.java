@@ -18,22 +18,18 @@ public class Quote {
     @Column
     private Integer id;
 
-    @Column(name = "character", nullable = false)
-    @NotEmpty(message = "Please provide a name")
-    @NotNull
-    private String schittCharacter;
-
     @Column (name = "quote", nullable = false)
     @NotEmpty(message = "Please provide a quote")
     @NotNull
     private String schittQuote;
 
     // ? Adding the relationship between quotes and characters
-     //One quote relates to one character
-    @OneToOne(
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL
-            )
+    // Many quotes can be attributed to one character
+    @ManyToOne(cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+    })
     @JoinColumn(name = "character_id") // used to specify the foreign key column
     @JsonIgnoreProperties("quotes")
     //! what is this doing? mapped to itself at the moment??

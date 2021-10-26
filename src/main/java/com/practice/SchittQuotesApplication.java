@@ -49,22 +49,18 @@ public class SchittQuotesApplication {
 
 			Quote newQuote = new Quote();
 			newQuote.setSchittQuote("Oh My God!");
-			newQuote.setSchittCharacter("David Rose");
 			newQuote.setScCharacter(davidRose);
 
 			Quote newQuote2 = new Quote();
 			newQuote2.setSchittQuote("What you did was impulsive, capricious, and melodramatic. But, it was also wrong.");
-			newQuote2.setSchittCharacter("Moira Rose");
 			newQuote2.setScCharacter(moiraRose);
 
 			Quote newQuote3 = new Quote();
 			newQuote3.setSchittQuote("You know what, David, you get murdered first for once.");
-			newQuote3.setSchittCharacter("Alexis Rose");
 			newQuote3.setScCharacter(alexisRose);
 
 			Quote newQuote4 = new Quote();
 			newQuote4.setSchittQuote("It's a nightshirt, David.");
-			newQuote4.setSchittCharacter("Johnny Rose");
 			newQuote4.setScCharacter(johnnyRose);
 
 			Quote newQuote5 = new Quote();
@@ -72,8 +68,8 @@ public class SchittQuotesApplication {
 			newQuote5.setScCharacter(davidRose);
 
 			Quote newQuote6 = new Quote();
-			newQuote5.setSchittQuote("David, stop acting like a disgruntled pelican.");
-			newQuote5.setScCharacter(moiraRose);
+			newQuote6.setSchittQuote("David, stop acting like a disgruntled pelican.");
+			newQuote6.setScCharacter(moiraRose);
 
 			quoteRepo.saveAll(List.of(newQuote, newQuote2, newQuote3, newQuote4, newQuote5, newQuote6));
 

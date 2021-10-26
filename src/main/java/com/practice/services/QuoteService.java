@@ -47,7 +47,7 @@ public class QuoteService {
         }
         Quote quoteToUpdate = optQuote.get();
         quoteToUpdate.setSchittQuote(quote.getSchittQuote());
-        quoteToUpdate.setSchittCharacter(quote.getSchittCharacter());
+        quoteToUpdate.setScCharacter(quote.getScCharacter());
         return quoteRepo.save(quoteToUpdate);
     }
 }

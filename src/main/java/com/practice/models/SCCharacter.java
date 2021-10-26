@@ -31,7 +31,6 @@ public class SCCharacter {
     @Column(name = "image")
     private String image;
 
-
     // Relationship between character and quotes
     @OneToMany(mappedBy = "scCharacter", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("scCharacter")
