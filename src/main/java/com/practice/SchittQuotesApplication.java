@@ -1,7 +1,9 @@
 package com.practice;
 
+import com.practice.models.AppUser;
 import com.practice.models.Quote;
 import com.practice.models.SCCharacter;
+import com.practice.repos.AppUserRepo;
 import com.practice.repos.CharacterRepo;
 import com.practice.repos.QuoteRepo;
 import org.springframework.boot.CommandLineRunner;
@@ -29,7 +31,7 @@ public class SchittQuotesApplication {
 
 	@Bean
 //	@Profile("!test")
-	CommandLineRunner commandLineRunner(QuoteRepo quoteRepo, CharacterRepo characterRepo) {
+	CommandLineRunner commandLineRunner(QuoteRepo quoteRepo, CharacterRepo characterRepo, AppUserRepo appUserRepo) {
 		return args -> {
 			SCCharacter davidRose = new SCCharacter();
 			davidRose.setName("David Rose");
@@ -77,8 +79,17 @@ public class SchittQuotesApplication {
 			newQuote6.setSchittQuote("David, stop acting like a disgruntled pelican.");
 			newQuote6.setScCharacter(moiraRose);
 
+			AppUser user1 = new AppUser();
+			user1.setUsername("Johnny");
+			user1.setEmail("johnny@rosevideo.com");
+			user1.setPassword(bCryptPasswordEncoder().encode("P@ssword123"));
+
 			characterRepo.saveAll(List.of(davidRose, moiraRose, alexisRose, johnnyRose));
 			quoteRepo.saveAll(List.of(newQuote, newQuote2, newQuote3, newQuote4, newQuote5, newQuote6));
+			appUserRepo.save(user1);
+
+
+
 
 
 		};
