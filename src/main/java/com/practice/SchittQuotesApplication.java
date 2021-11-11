@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
@@ -22,7 +23,12 @@ public class SchittQuotesApplication {
 	}
 
 	@Bean
-//	@Profile()
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+	@Bean
+//	@Profile("!test")
 	CommandLineRunner commandLineRunner(QuoteRepo quoteRepo, CharacterRepo characterRepo) {
 		return args -> {
 			SCCharacter davidRose = new SCCharacter();
@@ -45,7 +51,7 @@ public class SchittQuotesApplication {
 			johnnyRose.setBio("Once proud of his reputation for spending money as fast as he made it with his business, now, his easy-going attitude and good temperament are tested, as he not only tries to rebuild his family’s financial empire, but his family as well.");
 			johnnyRose.setImage("johnny-rose.jpg");
 
-			characterRepo.saveAll(List.of(davidRose, moiraRose, alexisRose, johnnyRose));
+
 
 			Quote newQuote = new Quote();
 			newQuote.setSchittQuote("Oh My God!");
@@ -71,6 +77,7 @@ public class SchittQuotesApplication {
 			newQuote6.setSchittQuote("David, stop acting like a disgruntled pelican.");
 			newQuote6.setScCharacter(moiraRose);
 
+			characterRepo.saveAll(List.of(davidRose, moiraRose, alexisRose, johnnyRose));
 			quoteRepo.saveAll(List.of(newQuote, newQuote2, newQuote3, newQuote4, newQuote5, newQuote6));
 
 
